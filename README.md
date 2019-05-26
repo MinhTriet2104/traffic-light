@@ -1,2 +1,1 @@
-# traffic-light
-Draw image with CSS Traffic light
+# Draw image with CSS - Traffic light
