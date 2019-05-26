@@ -1,0 +1,74 @@
+.frame {
+  width: 250px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+.frame .traffic-light {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 25px;
+  padding: 10px;
+  margin: 0 auto;
+  background: #3e5151;
+  border-radius: 5px;
+  position: relative;
+}
+
+.frame .traffic-light .light {
+  width: 25px;
+  height: 25px;
+  margin: 7px auto;
+  border-radius: 50%;
+  background: gray;
+  position: relative;
+}
+
+.frame .traffic-light .light::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+.frame .traffic-light .light:hover::before {
+  opacity: 1;
+}
+
+.frame .traffic-light .red::before {
+  background: -webkit-gradient(linear, left top, right top, from(#ff416c), to(#ff4b2b));
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.frame .traffic-light .yellow::before {
+  background: linear-gradient(120deg, #f6d365 0, #fda085 100%);
+}
+
+.frame .traffic-light .green::before {
+  background: linear-gradient(120deg, #d4fc79 0, #96e6a1 100%);
+}
+
+.frame .traffic-light::before, .frame .traffic-light::after {
+  content: '';
+  background: inherit;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+}
+
+.frame .traffic-light::before {
+  width: 15px;
+  height: 147.6px;
+  top: 123px;
+}
+
+.frame .traffic-light::after {
+  width: 37.5px;
+  height: 12.5px;
+  border-radius: 2px;
+  top: 270.6px;
+}
+/*# sourceMappingURL=styles.css.map */

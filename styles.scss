@@ -1,0 +1,86 @@
+$light-size: 25px;
+$margin-between-light: 7px;
+$padding-traffic-light: 10px;
+$height-of-light-body: $light-size * 3 + $margin-between-light * 4 + $padding-traffic-light * 2;
+$pos-of-leg-1: $height-of-light-body;
+$pos-of-leg-2: $height-of-light-body + $height-of-light-body * 1.2;
+
+.frame {
+    width: 250px;
+    height: 200px;
+    margin: 50px auto;
+
+    .traffic-light {
+        box-sizing: content-box;
+        width: $light-size;
+        padding: $padding-traffic-light;
+        margin: 0 auto;
+        background: #3e5151;
+        border-radius: 5px;
+        position: relative;
+
+        .light {
+            width: $light-size;
+            height: $light-size;
+            margin: $margin-between-light auto;
+            border-radius: 50%;
+            background: gray;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0.2;
+                border-radius: 50%;
+            }
+
+            &:hover {
+                &::before {
+                  opacity: 1;
+                }
+            }
+        }
+
+        .red {
+            &::before {
+                background: linear-gradient(to right,#ff416c,#ff4b2b);
+            }
+        }
+
+        .yellow {
+            &::before {
+                background: linear-gradient(120deg,#f6d365 0,#fda085 100%);
+            }
+        }
+
+        .green {
+            &::before {
+                background: linear-gradient(120deg,#d4fc79 0,#96e6a1 100%);
+            }
+        }
+
+        &::before, &::after {
+            content: '';
+            background: inherit;
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+        }
+
+        &::before {
+            width: $light-size * 0.6;
+            height: $height-of-light-body * 1.2;
+            top: $pos-of-leg-1;
+        }
+
+        &::after {
+            width: $light-size * 1.5;
+            height: $light-size * 0.5;
+            border-radius: 2px;
+            top: $pos-of-leg-2;
+        }
+    }
+}
+    
